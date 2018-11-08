@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'eclass.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': data.mysql['ENGINE'],
+        'NAME': data.mysql['NAME'],
+        'USER': data.mysql['USER'],
+        'PASSWORD': data.mysql['PASSWORD'],
+        'HOST': data.mysql['HOST'],
+        'PORT': data.mysql['PORT'],
     }
 }
 
