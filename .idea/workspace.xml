@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bc76509-80f2-40b2-887f-376ba34c47a6" name="Default Changelist" comment="insert home">
-      <change beforePath="$PROJECT_DIR$/eclass/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/eclass/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-temp/css/news-main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/css/news-main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-temp/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/css/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-temp/img/smu-yb.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/smu-yb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-temp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-temp/js/news-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/js/news-main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-temp/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/js/plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-temp/js/vendor/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/js/vendor/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-temp/js/vendor/modernizr-3.6.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/js/vendor/modernizr-3.6.0.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+    <list default="true" id="1bc76509-80f2-40b2-887f-376ba34c47a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/home/management/commands/runspider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/robot/1_易班 网站整理 2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/robot/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/robot/robot_jwc_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,14 +30,14 @@
         <counts>
           <entry key="html" value="2" />
           <entry key="md" value="2" />
-          <entry key="py" value="23" />
+          <entry key="py" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="2" />
           <entry key="Markdown" value="2" />
-          <entry key="Python" value="23" />
+          <entry key="Python" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -50,15 +45,25 @@
           <entry key="html" value="78" />
           <entry key="md" value="24" />
           <entry key="py" value="704" />
-          <entry key="txt" value="67" />
+          <entry key="txt" value="84" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="78" />
           <entry key="Markdown" value="24" />
-          <entry key="PLAIN_TEXT" value="67" />
+          <entry key="PLAIN_TEXT" value="84" />
           <entry key="Python" value="704" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.remote" value="1" />
+          <entry key="git.branch.compare" value="1" />
+          <entry key="git.branch.delete.local" value="1" />
+          <entry key="git.branch.delete.remote" value="5" />
+          <entry key="git.branch.merge" value="1" />
+          <entry key="git.checkout.as.new.branch" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -86,14 +91,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclass/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="-189">
+              <caret line="63" column="62" lean-forward="true" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
               <folding>
                 <element signature="e#307#316#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home/robot/robot_jwc_info.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-132">
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/home/management/commands/runspider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -129,18 +154,17 @@
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/home/migrations/urls.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/eclass/settings.py" />
         <option value="$PROJECT_DIR$/eclass/data.py" />
         <option value="$PROJECT_DIR$/home/urls.py" />
         <option value="$PROJECT_DIR$/eclass/urls.py" />
         <option value="$PROJECT_DIR$/home/views.py" />
         <option value="$PROJECT_DIR$/robot/robot_jwc_info.py" />
+        <option value="$PROJECT_DIR$/eclass/settings.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="407" />
-    <option name="y" value="16" />
+    <option name="x" value="367" />
     <option name="width" value="1270" />
     <option name="height" value="1040" />
   </component>
@@ -267,11 +291,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542296722315</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="整个目录整理为标准格式">
+      <created>1542463262215</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1542463262215</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="538" y="8" width="1016" height="832" extended-state="0" />
+    <frame x="294" y="0" width="1016" height="832" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892932" visible="true" weight="0.23163265" />
       <window_info id="Structure" order="1" sideWeight="0.5010707" side_tool="true" weight="0.23234391" />
@@ -327,7 +358,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="Data数据单独提取，改为引用" />
     <MESSAGE value="insert home" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert home" />
+    <MESSAGE value="整个目录整理为标准格式" />
+    <option name="LAST_COMMIT_MESSAGE" value="整个目录整理为标准格式" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/readme.md">
@@ -386,8 +418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eclass/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="-189">
+          <caret line="63" column="62" lean-forward="true" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
           <folding>
             <element signature="e#307#316#0" expanded="true" />
           </folding>
@@ -427,6 +459,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="710" lean-forward="true" selection-start-line="710" selection-end-line="710" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/robot/robot_jwc_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/management/commands/runspider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
         </state>
       </provider>
     </entry>
