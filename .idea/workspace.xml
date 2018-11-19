@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bc76509-80f2-40b2-887f-376ba34c47a6" name="Default Changelist" comment="前端 静态调用">
+    <list default="true" id="1bc76509-80f2-40b2-887f-376ba34c47a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/robot/robot_jwc_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/robot/robot_jwc_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +14,7 @@
     <session id="-1507771146">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="3" />
@@ -42,16 +40,16 @@
         <counts>
           <entry key="html" value="169" />
           <entry key="md" value="24" />
-          <entry key="py" value="984" />
-          <entry key="txt" value="132" />
+          <entry key="py" value="996" />
+          <entry key="txt" value="160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="169" />
           <entry key="Markdown" value="24" />
-          <entry key="PLAIN_TEXT" value="132" />
-          <entry key="Python" value="984" />
+          <entry key="PLAIN_TEXT" value="160" />
+          <entry key="Python" value="996" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -71,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home/robot/robot_jwc_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="190">
+              <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -83,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://E:/Anaconda3/Lib/site-packages/bs4/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+            <state relative-caret-position="491">
+              <caret line="99" column="68" lean-forward="true" selection-start-line="99" selection-start-column="68" selection-end-line="99" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -187,9 +185,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="366" />
-    <option name="y" value="-14" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="207" />
+    <option name="y" value="25" />
     <option name="width" value="1270" />
     <option name="height" value="1040" />
   </component>
@@ -361,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542550672662</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="爬虫编码还有点儿问题，先push了，部署看看前端">
+      <created>1542554353840</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1542554353840</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -374,10 +379,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="171" y="79" width="1016" height="832" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49892932" visible="true" weight="0.23117569" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892932" visible="true" weight="0.35714287" />
       <window_info id="Structure" order="1" sideWeight="0.5010707" side_tool="true" weight="0.23234391" />
       <window_info id="Favorites" order="2" sideWeight="0.5010707" side_tool="true" weight="0.23234391" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -388,7 +392,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32765958" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49889868" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49889868" visible="true" weight="0.3319027" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5011013" side_tool="true" weight="0.32904148" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -445,7 +449,8 @@
     <MESSAGE value="添加爬虫 manage控制" />
     <MESSAGE value="install app" />
     <MESSAGE value="前端 静态调用" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端 静态调用" />
+    <MESSAGE value="爬虫编码还有点儿问题，先push了，部署看看前端" />
+    <option name="LAST_COMMIT_MESSAGE" value="爬虫编码还有点儿问题，先push了，部署看看前端" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/readme.md">
@@ -545,16 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclass/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="110" column="23" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
-          <folding>
-            <element signature="e#307#316#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/management/commands/robot_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -596,20 +591,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/robot/robot_jwc_info.py">
+    <entry file="file://E:/Anaconda3/Lib/site-packages/bs4/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="491">
+          <caret line="99" column="68" lean-forward="true" selection-start-line="99" selection-start-column="68" selection-end-line="99" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eclass/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="110" column="23" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#307#316#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/Anaconda3/Lib/site-packages/bs4/__init__.py">
+    <entry file="file://$PROJECT_DIR$/home/robot/robot_jwc_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+        <state relative-caret-position="190">
+          <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
