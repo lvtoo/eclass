@@ -1,12 +1,14 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 from home.models import New
 import json
+from django.views.generic import View
 
 
 # Create your views here.
-def index(request):
-    content = {}
-    new = New.objects.filter(display=True).values('title', 'describe', 'pub_date')[0:10]
-    for i in range(0, len(new)):
-        content.update({i: new[i]})
-    return render(request, 'home/index.html', content, status=200)
+class newsIndex(ListView):
+    model = New
+    template_name = 'home/index.html'
+    paginate_by = 10
+    context_object_name = 'news'
+    ordering = 'pub_date'
