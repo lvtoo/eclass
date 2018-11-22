@@ -43,18 +43,18 @@
 
     <div class="feed">  <!--1 Column Feed Item Holder-->
 
-
+      {% for new in news %}
       <div class="feed-item competition">
         <div class="text-holder-noimage col-3-5">
           <!--title-->
-          <div class="feed-title">xxx竞赛信息</div>
+          <div class="feed-title">{{new.title|truncatechars:20}}</div>
           <!--description-->
-          <div class="feed-description">相关简介
+          <div class="feed-description">{{new.text|truncatechars:50}}
           </div>
         </div><!--End of Text Holder-->
-        <div class="feed-meta"><span class="single"><i class="fa fa-tags"></i> 竞赛信息</span><span class="single"><i class="fa fa-clock-o"></i> 2018-11-11</span></div>
+        <div class="feed-meta"><span class="single"><i class="fa fa-tags"></i> 竞赛信息</span><span class="single"><i class="fa fa-clock-o"></i> {{ new.pub_date }}</span></div>
       </div><!--End of Feed Item-->
-
+      {% endfor %}
 
       <div class="feed-item portfolio">
         <div class="img-holder col-1-5">
