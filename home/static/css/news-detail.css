@@ -18,8 +18,9 @@ label {
 
 .news-content {
     margin-top: 20px;
-    font-size: 16px;
-    line-height: 26px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 30px;
     text-align: justify;
 }
 
