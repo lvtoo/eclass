@@ -1,0 +1,213 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>新鲜事</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#256182">
+  <link rel="manifest" href="site.webmanifest">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="/static/css/normalize.css">
+  <link rel="stylesheet" href="/static/css/news-main.css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">你正在使用的浏览器 <strong>版本太旧</strong> 不支持该页面，请升级浏览器。</p>
+<![endif]-->
+
+<div class="allholder">
+  <div class="navoverlay"></div>
+  <div class="nav">
+    <div id="logo-center" class="centered">
+      <img src="/static/img/smu-yb.png" width=90/>
+    </div><!--end of logo-->
+    <ul>
+      <li class="selected"><i class="fa fa-newspaper-o "></i> <a href="#">新闻</a></li>
+      <li><i class="fa fa-briefcase"></i> <a href="#">常用工具</a></li>
+      <li><i class="fa fa-quote-right"></i><a href="#">  关于</a></li>
+      <li><i class="fa fa-send"></i> <a href="#">联系</a></li>
+    </ul>
+    <div class="credit"><span>  <strong>&#169   上海海事大学易班工作站</strong></span></div>
+
+  </div><!--end of nav-->
+
+  <div id="content">
+
+
+    <div class="feed">  <!--1 Column Feed Item Holder-->
+
+      {% for new in news %}
+      <div class="feed-item competition" onclick="window.open('{% url 'news_detail' news_id=new.id %}');">
+        <div class="text-holder-noimage col-3-5">
+          <!--title-->
+          <div class="feed-title">{{new.title|truncatechars:20}}</div>
+          <!--description-->
+          <div class="feed-description">{{new.text|truncatechars:50}}
+          </div>
+        </div><!--End of Text Holder-->
+        <div class="feed-meta"><span class="single"><i class="fa fa-tags"></i> 竞赛信息</span><span class="single"><i class="fa fa-clock-o"></i> {{ new.pub_date }}</span></div>
+      </div><!--End of Feed Item-->
+      {% endfor %}
+
+      <div class="feed-item portfolio">
+        <div class="img-holder col-1-5">
+          <div class="image"></div>
+        </div>
+        <div class="text-holder col-3-5">
+          <div class="feed-title">xxx教务通知</div>
+          <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus obcaecati
+            consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut mollitia unde
+            sunt nobis quia, nam quasi!
+          </div>
+        </div><!--end of text-holder-->
+      </div><!--end of feed item-->
+
+
+      <div class="feed-item competition">
+        <div class="img-holder">
+          <div class="icon"></div>
+        </div>
+        <div class="text-holder col-3-5">
+          <div class="feed-title">Blog Item</div>
+          <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus obcaecati
+            consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut mollitia unde
+            sunt nobis quia, nam quasi!
+          </div>
+        </div><!--End of Text Holder-->
+      </div><!--End of Feed Item-->
+
+      <div class="feed-item">
+        <div class="img-holder">
+          <div class="icon"></div>
+        </div>
+        <div class="text-holder col-3-5">
+          <div class="feed-title">Other Item</div>
+          <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus obcaecati
+            consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut mollitia unde
+            sunt nobis quia, nam quasi!
+          </div>
+        </div><!--end of text-holder-->
+      </div><!--end of feed item-->
+
+      <div class="feed-item portfolio">
+        <div class="img-holder col-1-5">
+          <div class="icon"></div>
+        </div>
+        <div class="text-holder col-3-5">
+          <div class="feed-title">Portfolio Item</div>
+          <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus obcaecati
+            consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut mollitia unde
+            sunt nobis quia, nam quasi!
+          </div>
+        </div><!--end of text-holder-->
+      </div><!--end of feed item-->
+
+      <div class="feed-item competition">
+        <div class="img-holder">
+          <div class="icon"></div>
+        </div>
+        <div class="text-holder col-3-5">
+          <div class="feed-title">Blog Item</div>
+          <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus obcaecati
+            consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut mollitia unde
+            sunt nobis quia, nam quasi!
+          </div>
+        </div><!--End of Text Holder-->
+      </div><!--End of Feed Item-->
+
+      <div class="feed-item">
+        <div class="img-holder">
+          <div class="icon"></div>
+        </div>
+        <div class="text-holder col-3-5">
+          <div class="feed-title">Other Item</div>
+          <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus obcaecati
+            consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut mollitia unde
+            sunt nobis quia, nam quasi!
+          </div>
+        </div><!--end of text-holder-->
+      </div><!--end of feed item-->
+
+      <div class="feed-item portfolio">
+        <div class="img-holder col-1-5">
+          <div class="icon"></div>
+        </div>
+        <div class="text-holder col-3-5">
+          <div class="feed-title">Portfolio Item</div>
+          <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus obcaecati
+            consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut mollitia unde
+            sunt nobis quia, nam quasi!
+          </div>
+        </div><!--end of text-holder-->
+      </div><!--end of feed item-->
+
+      <div class="feed-item">
+        <div class="img-holder">
+          <div class="icon"></div>
+        </div>
+        <div class="text-holder col-3-5">
+          <div class="feed-title">Other Item</div>
+          <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus obcaecati
+            consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut mollitia unde
+            sunt nobis quia, nam quasi!
+          </div>
+        </div><!--end of text-holder-->
+      </div><!--end of feed item-->
+
+    </div><!--end of Feed-->
+  </div><!-- End of Content-->
+</div><!--end of allholder-->
+
+<div class="bodyholder">
+  <div class="toolbar">
+    <div id="hamburger">
+      <i class="fa fa-bars"></i>
+    </div><!--end of hamburger-->
+
+    <div id="apptitle"><h1>海大易班资讯</h1></div>
+
+    <div class="tools">
+      <ul>
+        <!--<li><i class="fa fa-search" id="search"></i></li>    搜索功能待添加-->
+        <li><i class="fa fa-ellipsis-v" id="settings"></i></li>
+      </ul>
+    </div><!--end of tools-->
+  </div><!--end of toolbar-->
+
+  <div class="filters">
+    <ul>
+      <li id="competition-filter">Blog</li>
+      <li id="portfolio-filter">Portfolio</li>
+    </ul>
+  </div><!--end of filters-->
+
+
+</div><!--end of bodyholder-->
+
+<!-- Add your site or application content here -->
+<script type="text/javascript" src="https://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+<script type="text/javascript">
+         $youziku.load(".feed-title", "8772855161fb459d9bf4409be910fdbe", "SiYuanRegular");
+        $youziku.load(".feed-description", "73dc3f506c4f4991980bab830c4218a5", "HaTian-SuiXing");
+        $youziku.draw();
+    </script>
+
+<script src="/static/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>var $(".feed-description").text()
+</script>
+<script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+<script src="/static/js/plugins.js"></script>
+<script src="/static/js/news-main.js"></script>
+
+</body>
+
+</html>
