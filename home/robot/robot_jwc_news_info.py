@@ -28,7 +28,7 @@ for li in all_li:
         describe = text.split('，', 1)[1][:40]
         obj = New.objects.filter(title=title)
         if not obj:
-            new = New(title=title, public='jwc', source=source, text=text, type='教务通知', pub_date=pub_date,
+            new = New(title=title, public='jwc', source=source, text=text, type='新闻动态', pub_date=pub_date,
                       describe=describe)
             new.save()
             times += 1
