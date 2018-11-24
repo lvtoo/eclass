@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#256182">
-{#    <link rel="manifest" href="site.webmanifest">#}
+    {#    <link rel="manifest" href="site.webmanifest">#}
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="/static/css/normalize.css">
@@ -44,7 +44,7 @@
         <div class="feed">  <!--1 Column Feed Item Holder-->
 
             {% for new in news %}
-                {% if new.type == "教务通知" %}
+                {% if new.type == "news" %}
                     <div class="feed-item competition" onclick="window.open('{% url 'news_detail' news_id=new.id %}');">
                         <div class="text-holder-noimage col-3-5">
                             <!--title-->
@@ -54,11 +54,11 @@
                             </div>
                         </div><!--End of Text Holder-->
                         <div class="feed-meta"><span class="single"><i
-                                class="fa fa-tags"></i> {{ new.type }}</span><span
+                                class="fa fa-tags"></i> 教务信息</span><span
                                 class="single"><i class="fa fa-clock-o"></i> {{ new.pub_date|date:"Y-m-d" }}</span>
                         </div>
                     </div><!--End of Feed Item-->
-                {% elif new.type == "讲座通知" %}
+                {% elif new.type == "notices" %}
                     <div class="feed-item portfolio" onclick="window.open('{% url 'news_detail' news_id=new.id %}');">
                         <div class="text-holder-noimage col-3-5">
                             <!--title-->
@@ -68,18 +68,19 @@
                             </div>
                         </div><!--End of Text Holder-->
                         <div class="feed-meta"><span class="single"><i
-                                class="fa fa-tags"></i> {{ new.type }}</span><span
+                                class="fa fa-tags"></i> 竞赛信息</span><span
                                 class="single"><i class="fa fa-clock-o"></i> {{ new.pub_date|date:"Y-m-d" }}</span>
                         </div>
                     </div><!--End of Feed Item-->
                 {% endif %}
 
             {% endfor %}
-        </div>
-        <div id="buttons">
-            <button class="ajax-button" id="ajax-button" type="submit">加载更多</button>
+
         </div>
 
+        <div id="bottom">
+            <p>已经到底了~</p>
+        </div>
         {#暂未用到的img和icon样式#}
         {#            <div class="feed-item portfolio">#}
         {#                <div class="img-holder col-1-5">#}
@@ -114,6 +115,7 @@
         {#            </div><!--end of feed item-->#}
 
     </div><!--end of Feed-->
+
 </div><!-- End of Content-->
 </div><!--end of allholder-->
 

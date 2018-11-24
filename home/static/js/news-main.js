@@ -81,38 +81,93 @@ $('#portfolio-filter').click(function () {
         portfolioOpen = false;
     }
 });
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+$.ajaxSetup({
+    crossDomain: false, // obviates need for sameOrigin test
+    beforeSend: function (xhr, settings) {
+        if (!csrfSafeMethod(settings.type)) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+var a = 3;
+var load = true;
+
+//获取页面顶部被卷起来的高度
+function scrollTop() {
+    return Math.max(
+        //chrome
+        document.body.scrollTop,
+        //firefox/IE
+        document.documentElement.scrollTop);
+}
+
+function windowHeight() {
+    return (document.compatMode == "CSS1Compat") ?
+        document.documentElement.clientHeight :
+        document.body.clientHeight;
+}
+
+//获取页面文档的总高度
+function documentHeight() {
+    //现代浏览器（IE9+和其他浏览器）和IE8的document.body.scrollHeight和document.documentElement.scrollHeight都可以
+    return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+}
+
+
+$(window).on('scroll', function () {
+    if (scrollTop() + windowHeight() >= (documentHeight() - 50/*滚动响应区域高度取50px*/)) {
+        if (load == true) {
+            feedJoin(a);
+            a++;
+        }
+
+    }
+});
+
+
+function feedJoin(a) {
+    $.ajax({
+        type: 'get',
+        url: "/api/news",
+        dataType: 'html',
+        data: {'p': a},
+        success: function (reponse) {
+            $(".feed").append(reponse)
+        },
+        error: function () {
+            load = false;
+            $("#bottom").css("display","block");
+        }
+    });
+}
+
+
 //
-// function getCookie(name) {
-//     var cookieValue = null;
-//     if (document.cookie && document.cookie != '') {
-//         var cookies = document.cookie.split(';');
-//         for (var i = 0; i < cookies.length; i++) {
-//             var cookie = jQuery.trim(cookies[i]);
-//             // Does this cookie string begin with the name we want?
-//             if (cookie.substring(0, name.length + 1) == (name + '=')) {
-//                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-//                 break;
-//             }
-//         }
-//     }
-//     return cookieValue;
-// }
-//
-// var csrftoken = getCookie('csrftoken');
-//
-// function csrfSafeMethod(method) {
-//     // these HTTP methods do not require CSRF protection
-//     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-// }
-//
-// $.ajaxSetup({
-//     crossDomain: false, // obviates need for sameOrigin test
-//     beforeSend: function (xhr, settings) {
-//         if (!csrfSafeMethod(settings.type)) {
-//             xhr.setRequestHeader("X-CSRFToken", csrftoken);
-//         }
-//     }
-// });
+
 // $(function () {
 //     var start = 10;
 //     var offset = 15;
@@ -167,8 +222,6 @@ $('#portfolio-filter').click(function () {
 //         });
 //     }
 
-
-});
 
 
 
