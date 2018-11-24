@@ -20,7 +20,7 @@ for i in tr:
     text = ""
     for i in items:
         text = text + i.text() + '\n\n'
-    obj = New.objects.filter(source=lec_urls)
+    obj = New.objects.filter(title=title)
     if not obj:
         new = New(title=i_title, public=i_department, source=lec_urls, text=text, type='讲座通知', pub_date=i_time)
         new.save()
