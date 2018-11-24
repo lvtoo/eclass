@@ -24,7 +24,7 @@ for i in tr:
         text = text + i.text() + '\n\n'
     obj = New.objects.filter(title=title)
     if not obj:
-        new = New(title=i_title, public=i_department, source=lec_urls, text=text, type='讲座通知', pub_date=i_time)
+        new = New(title=i_title, public=i_department, source=lec_urls, text=text, type='notices', pub_date=i_time)
         new.save()
         times += 1
 print("已更新"+str(times)+"条讲座通知。")
