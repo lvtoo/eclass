@@ -1,0 +1,42 @@
+{% load static %}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{% for new in news %}
+                {% if new.type == "教务通知" %}
+                    <div class="feed-item competition" onclick="window.open('{% url 'news_detail' news_id=new.id %}');">
+                        <div class="text-holder-noimage col-3-5">
+                            <!--title-->
+                            <div class="feed-title">{{ new.title }}</div>
+                            <!--description-->
+                            <div class="feed-description">{{ new.describe|truncatechars:70 }}
+                            </div>
+                        </div><!--End of Text Holder-->
+                        <div class="feed-meta"><span class="single"><i
+                                class="fa fa-tags"></i> {{ new.type }}</span><span
+                                class="single"><i class="fa fa-clock-o"></i> {{ new.pub_date|date:"Y-m-d" }}</span>
+                        </div>
+                    </div><!--End of Feed Item-->
+                {% elif new.type == "讲座通知" %}
+                    <div class="feed-item portfolio" onclick="window.open('{% url 'news_detail' news_id=new.id %}');">
+                        <div class="text-holder-noimage col-3-5">
+                            <!--title-->
+                            <div class="feed-title">{{ new.title }}</div>
+                            <!--description-->
+                            <div class="feed-description">{{ new.text|truncatechars:70 }}
+                            </div>
+                        </div><!--End of Text Holder-->
+                        <div class="feed-meta"><span class="single"><i
+                                class="fa fa-tags"></i> {{ new.type }}</span><span
+                                class="single"><i class="fa fa-clock-o"></i> {{ new.pub_date|date:"Y-m-d" }}</span>
+                        </div>
+                    </div><!--End of Feed Item-->
+                {% endif %}
+
+            {% endfor %}
+{#</body>#}
+{#</html>#}

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#256182">
-{#    <link rel="manifest" href="site.webmanifest">#}
+    {#    <link rel="manifest" href="site.webmanifest">#}
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="/static/css/normalize.css">
@@ -75,11 +75,12 @@
                 {% endif %}
 
             {% endfor %}
-        </div>
-        <div id="buttons">
-            <button class="ajax-button" id="ajax-button" type="submit">加载更多</button>
+
         </div>
 
+        <div id="bottom">
+            <p>已经到底了~</p>
+        </div>
         {#暂未用到的img和icon样式#}
         {#            <div class="feed-item portfolio">#}
         {#                <div class="img-holder col-1-5">#}
@@ -114,6 +115,7 @@
         {#            </div><!--end of feed item-->#}
 
     </div><!--end of Feed-->
+
 </div><!-- End of Content-->
 </div><!--end of allholder-->
 
