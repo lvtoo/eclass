@@ -25,7 +25,7 @@ for li in all_li:
         # 发布时间： 2018/10/9 10:25:12
         pub_date = soup.find('span', id='lblCreateDate').string.split(' ', 2)[1]
         pub_date = datetime.strptime(pub_date, '%Y/%m/%d')
-        describe = text.split('，', 1)[1][:40]
+        describe = text.split('，', 1)[1][:70]
         obj = New.objects.filter(title=title)
         if not obj:
             new = New(title=title, public='jwc', source=source, text=text, type='新闻动态', pub_date=pub_date,
