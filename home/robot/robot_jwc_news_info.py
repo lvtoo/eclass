@@ -22,6 +22,7 @@ for li in all_li:
         r = requests.get(source)
         soup = BeautifulSoup(r.content, 'lxml')
         text = soup.find('div', id='content').text
+        # 发布时间： 2018/10/9 10:25:12
         pub_date = soup.find('span', id='lblCreateDate').string.split(' ', 2)[1]
         pub_date = datetime.strptime(pub_date, '%Y/%m/%d')
         describe = text.split('，', 1)[1][:70]
