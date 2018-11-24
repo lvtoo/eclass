@@ -1,5 +1,6 @@
 from pyquery import PyQuery as pq
 from home.models import New
+from datetime import datetime
 
 times=0
 doc = pq("https://www.shmtu.edu.cn/events")
@@ -9,7 +10,8 @@ for i in tr:
     temp = pq(i)
     i_url = temp("a").attr("href")
     lec_urls="https://www.shmtu.edu.cn/"+i_url
-    i_time = temp(".date").text()
+    i_time = temp(".date").text().split(',', 1)[0]
+    i_time = datetime.strptime(i_time, '%Y-%m-%d')
     i_title = temp(".title").text()
     i_department = temp(".department").text()
     doc = pq(lec_urls)
@@ -20,7 +22,7 @@ for i in tr:
     text = ""
     for i in items:
         text = text + i.text() + '\n\n'
-    obj = New.objects.filter(source=lec_urls)
+    obj = New.objects.filter(title=title)
     if not obj:
         new = New(title=i_title, public=i_department, source=lec_urls, text=text, type='讲座通知', pub_date=i_time)
         new.save()
