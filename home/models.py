@@ -10,7 +10,7 @@ class New(models.Model):
     type = models.CharField(max_length=20)
     public = models.CharField(max_length=20, null=True)
     display = models.BooleanField(default=False)
-    pub_date = models.CharField('date published', max_length=100, default=timezone.now)
+    pub_date = models.DateTimeField('date published')
     source = models.CharField(max_length=200)
 
     def __str__(self):

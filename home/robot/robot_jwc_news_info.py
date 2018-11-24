@@ -2,6 +2,7 @@
 import requests
 from bs4 import BeautifulSoup
 from home.models import New
+from datetime import datetime
 
 # 计数，更新了几条数据
 times = 0
@@ -23,6 +24,7 @@ for li in all_li:
         text = soup.find('div', id='content').text
         # 发布时间： 2018/10/9 10:25:12
         pub_date = soup.find('span', id='lblCreateDate').string.split(' ', 2)[1]
+        pub_date = datetime.strptime(pub_date, '%Y/%m/%d')
         describe = text.split('，', 1)[1][:40]
         obj = New.objects.filter(title=title)
         if not obj:
