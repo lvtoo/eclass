@@ -60,7 +60,7 @@ $('#competition-filter').click(function () {
         competitionOpen = true;
     } else {
         $('.competition').css('height', '120px');
-        $('.competition').css('margin-bottom', '1px');
+        $('.competition').css('margin-bottom', '10px');
         $('#competition-filter').css('color', '#222');
         competitionOpen = false;
     }
@@ -76,7 +76,7 @@ $('#portfolio-filter').click(function () {
         portfolioOpen = true;
     } else {
         $('.portfolio').css('height', '120px');
-        $('.portfolio').css('margin-bottom', '1px');
+        $('.portfolio').css('margin-bottom', '10px');
         $('#portfolio-filter').css('color', '#222');
         portfolioOpen = false;
     }
