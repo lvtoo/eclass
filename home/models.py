@@ -13,5 +13,8 @@ class New(models.Model):
     pub_date = models.DateTimeField('date published')
     source = models.CharField(max_length=200)
 
+    # class Meta:
+    #     ordering:['-pub_date']
+
     def __str__(self):
         return self.title

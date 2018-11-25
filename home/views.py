@@ -11,16 +11,17 @@ class Index(ListView):
     template_name = 'home/index.html'
     paginate_by = 10
     context_object_name = 'news'
-    ordering = 'pub_date'
+    ordering = ['-pub_date']
 
 
 class IndexApi(ListView):
+    ordering = ['-pub_date']
     model = New
     template_name = 'home/ajax.html'
     paginate_by = 5
     context_object_name = 'news'
-    ordering = 'pub_date'
     page_kwarg = 'p'
+
 
 # def getdata(request):
 #     news = New.objects.order_by('pub_date').values('title', 'describe', 'pub_date', 'type')[a-10:a]
