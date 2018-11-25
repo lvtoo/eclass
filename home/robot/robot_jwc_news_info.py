@@ -21,17 +21,21 @@ for li in all_li:
         source = url + source
         r = requests.get(source)
         soup = BeautifulSoup(r.content, 'lxml')
-        text = soup.find('div', id='content').text
-        # 发布时间： 2018/10/9 10:25:12
+        div = soup.find('div', id='content')
+        text = div.text
+        img_src = 'http://jwc.shmtu.edu.cn' + div.find('img').get('src')
         pub_date = soup.find('span', id='lblCreateDate').string.split(' ', 2)[1]
         pub_date = datetime.strptime(pub_date, '%Y/%m/%d')
         describe = text.split('，', 1)[1][:70]
         obj = New.objects.filter(title=title)
         if not obj:
             new = New(title=title, public='教务处', source=source, text=text, type='news', pub_date=pub_date,
-                      describe=describe)
+                      describe=describe, img_url=img_src)
             new.save()
             times += 1
+        else:
+            print("已更新" + str(times) + "条教务通知。")
+            exit()
         # else:
             # 临时更新数据表
             # obj.describe = text.split('，', 1)[1][:40]
