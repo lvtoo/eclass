@@ -152,6 +152,7 @@ $(window).on('scroll', function () {
 function feedJoin(a) {
     $.ajax({
         type: 'get',
+        async:false,
         url: "/api/news",
         dataType: 'html',
         data: {'p': a},
