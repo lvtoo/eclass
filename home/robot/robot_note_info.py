@@ -29,7 +29,4 @@ for i in tr:
                   describe=i_describe)
         new.save()
         times += 1
-    else:
-        print("已更新" + str(times) + "条讲座通知。")
-        exit()
 print("已更新"+str(times)+"条讲座通知。")
