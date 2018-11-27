@@ -22,7 +22,7 @@ for i in tr:
     text = ""
     for i in items:
         i = pq(i)
-        if (i.is_("table")):
+        if i.is_("table"):
             table = i.outerHtml()
             table = re.sub('<table\s.*?>', '<table>', table)
             table = re.sub('<p\s.*?>', '<p>', table)
@@ -36,7 +36,7 @@ for i in tr:
     obj = New.objects.filter(title=title)
     if not obj:
         new = New(title=i_title, public=i_department, source=lec_urls, text=text, type='notices', pub_date=i_time,
-                  describe=i_describe,img_url="")
+                  describe=i_describe, img_url="")
         new.save()
         times += 1
 print("已更新"+str(times)+"条讲座通知。")
