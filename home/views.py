@@ -13,9 +13,6 @@ class Index(ListView):
     context_object_name = 'items'
     ordering = ['-pub_date']
 
-    def get_queryset(self):
-        return New.objects.filter(display=True)
-
 
 class IndexApi(ListView):
     ordering = ['-pub_date']
@@ -24,9 +21,6 @@ class IndexApi(ListView):
     paginate_by = 5
     context_object_name = 'items'
     page_kwarg = 'p'
-
-    def get_queryset(self):
-        return New.objects.filter(display=True)
 
 
 # def getdata(request):
@@ -49,8 +43,7 @@ class NewsDetailView(View):
             "title": news.title,
             "text": news.text,
             "type": news.type,
-            "pub_date": news.pub_date,
-            "img_url":news.img_url
+            "pub_date": news.pub_date
 
         }
         return render(request, 'home/detail.html', context=context)
