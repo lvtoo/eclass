@@ -12,5 +12,7 @@ class Command(BaseCommand):
         import home.robot.robot_note_info
         # 启动 校园动态
         import home.robot.robot_campus_news_info
+        # 启动 教务处新闻
+        import home.robot.robot_jwc_notes_info
 
     pass
