@@ -35,7 +35,9 @@
 {#        <blockquote>#}
 {#            <p>这只是一个引用的样式示例</p>#}
 {#        </blockquote>#}
+        {% if img_url != "" %}
         <img src="{{ img_url }}" class="img-fluid" alt="Responsive image">
+        {% endif %}
         <p>
             {{ text| safe | linebreaks }}
         </p>
