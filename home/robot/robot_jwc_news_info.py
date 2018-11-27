@@ -23,7 +23,10 @@ for li in all_li:
         soup = BeautifulSoup(r.content, 'lxml')
         div = soup.find('div', id='content')
         text = div.text
-        img_src = 'http://jwc.shmtu.edu.cn' + div.find('img').get('src')
+        try:
+            img_src = 'http://jwc.shmtu.edu.cn' + div.find('img').get('src')
+        except AttributeError:
+            img_src = ''
         pub_date = soup.find('span', id='lblCreateDate').string.split(' ', 2)[1]
         pub_date = datetime.strptime(pub_date, '%Y/%m/%d')
         describe = text.split('，', 1)[1][:70]
@@ -34,5 +37,5 @@ for li in all_li:
             new.save()
             times += 1
 
-print("已更新" + str(times) + "条教务通知。")
+print("已更新" + str(times) + "条教务新闻。")
 
