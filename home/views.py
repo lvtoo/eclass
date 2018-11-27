@@ -10,7 +10,7 @@ class Index(ListView):
     model = New
     template_name = 'home/index.html'
     paginate_by = 10
-    context_object_name = 'news'
+    context_object_name = 'items'
     ordering = ['-pub_date']
 
     def get_queryset(self):
@@ -22,7 +22,7 @@ class IndexApi(ListView):
     model = New
     template_name = 'home/ajax.html'
     paginate_by = 5
-    context_object_name = 'news'
+    context_object_name = 'items'
     page_kwarg = 'p'
 
     def get_queryset(self):
@@ -49,7 +49,8 @@ class NewsDetailView(View):
             "title": news.title,
             "text": news.text,
             "type": news.type,
-            "pub_date": news.pub_date
+            "pub_date": news.pub_date,
+            "img_url":news.img_url
 
         }
         return render(request, 'home/detail.html', context=context)

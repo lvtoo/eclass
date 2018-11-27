@@ -29,14 +29,15 @@
 </div><!--end of toolbar-->
 <div class="container mt-5">
     <h3 class="news-title">{{ title }}</h3>
-    <div class="news-status">{{ pub_date }}
+    <div class="news-status">{{ pub_date|date:"Y-m-d"  }}
     </div>
     <div class="news-content">
-        <blockquote>
-            <p>这只是一个引用的样式示例</p>
-        </blockquote>
+{#        <blockquote>#}
+{#            <p>这只是一个引用的样式示例</p>#}
+{#        </blockquote>#}
+        <img src="{{ img_url }}" class="img-fluid" alt="Responsive image">
         <p>
-            {{ text|linebreaks }}
+            {{ text| safe | linebreaks }}
         </p>
 
     </div>

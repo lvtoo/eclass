@@ -402,7 +402,7 @@ h1 {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.feed-item .img-holder .image {
+.feed-item .img-holder .image{
     width: 85px;
     height: 60px;
     float: left;
@@ -457,11 +457,11 @@ h1 {
     font-weight: 100;
 }
 
-.competition {
+.news {
     overflow: hidden;
 }
 
-.portfolio {
+.notices {
     overflow: hidden;
 }
 
