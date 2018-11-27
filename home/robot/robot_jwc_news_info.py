@@ -33,9 +33,6 @@ for li in all_li:
                       describe=describe, img_url=img_src)
             new.save()
             times += 1
-        else:
-            print("已更新" + str(times) + "条教务通知。")
-            exit()
         # else:
             # 临时更新数据表
             # obj.describe = text.split('，', 1)[1][:40]

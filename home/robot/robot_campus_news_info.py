@@ -37,7 +37,4 @@ for li in all_li:
                   describe=describe, img_url=img_src)
         new.save()
         times += 1
-    else:
-        print("已更新" + str(times) + "条校园动态。")
-        exit()
 print("已更新" + str(times) + "条校园动态。")

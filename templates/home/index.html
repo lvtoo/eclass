@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+{% load type_filter %}
 <html class="no-js" lang="">
 
 <head>
@@ -43,80 +44,78 @@
 
         <div class="feed">  <!--1 Column Feed Item Holder-->
 
-            {% for new in news %}
-                {% if new.type == "news" %}
-                    <div class="feed-item competition" onclick="window.location.href='{% url 'news_detail' news_id=new.id %}';">
+            {% for item in items %}
+                <div class="feed-item {{ item.type }}"
+                     onclick="window.location.href='{% url 'news_detail' news_id=item.id %}';">
+
+                    {% if item.img_url == "" %}
                         <div class="text-holder-noimage col-3-5">
                             <!--title-->
-                            <div class="feed-title">{{ new.title }}</div>
+                            <div class="feed-title">{{ item.title }}</div>
                             <!--description-->
-                            <div class="feed-description">{{ new.describe|truncatechars:70 }}
+                            <div class="feed-description">{{ item.describe|truncatechars:70 }}
                             </div>
                         </div><!--End of Text Holder-->
-                        <div class="feed-meta"><span class="single"><i
-                                class="fa fa-tags"></i> 新闻动态</span><span
-                                class="single"><i class="fa fa-clock-o"></i> {{ new.pub_date|date:"Y-m-d" }}</span>
+                    {% else %}
+                        <div class="img-holder col-1-5">
+                            <img src="{{ item.img_url }}" alt="" class="image">
                         </div>
-                    </div><!--End of Feed Item-->
-                {% elif new.type == "notices" %}
-                    <div class="feed-item portfolio" onclick="window.open('{% url 'news_detail' news_id=new.id %}');">
-                        <div class="text-holder-noimage col-3-5">
-                            <!--title-->
-                            <div class="feed-title">{{ new.title }}</div>
-                            <!--description-->
-                            <div class="feed-description">{{ new.text|truncatechars:70 }}
+                        <div class="text-holder col-3-5">
+                            <div class="feed-title">{{ item.title }}</div>
+                            <div class="feed-description">{{ item.describe|truncatechars:40 }}
                             </div>
-                        </div><!--End of Text Holder-->
-                        <div class="feed-meta"><span class="single"><i
-                                class="fa fa-tags"></i> 通知公告</span><span
-                                class="single"><i class="fa fa-clock-o"></i> {{ new.pub_date|date:"Y-m-d" }}</span>
-                        </div>
-                    </div><!--End of Feed Item-->
-                {% endif %}
+                        </div><!--end of text-holder-->
+                    {% endif %}
+
+                    <div class="feed-meta"><span class="single"><i
+                            class="fa fa-tags"></i> {{ item.type|type_judge }}</span><span
+                            class="single"><i class="fa fa-clock-o"></i> {{ item.pub_date|date:"Y-m-d" }}</span>
+                    </div>
+                </div><!--End of Feed Item-->
+
 
             {% endfor %}
 
-        </div>
 
+
+            {#暂未用到的img和icon样式#}
+            {#            <div class="feed-item portfolio">#}
+            {#                <div class="img-holder col-1-5">#}
+            {#                    <div class="image"></div>#}
+            {#                </div>#}
+            {#                <div class="text-holder col-3-5">#}
+            {#                    <div class="feed-title">xxx教务通知</div>#}
+            {#                    <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus#}
+            {#                        obcaecati#}
+            {#                        consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut#}
+            {#                        mollitia unde#}
+            {#                        sunt nobis quia, nam quasi!#}
+            {#                    </div>#}
+            {#                </div><!--end of text-holder-->#}
+            {#            </div><!--end of feed item-->#}
+            {##}
+            {##}
+            {#            #}
+            {#            <div class="feed-item">#}
+            {#                <div class="img-holder">#}
+            {#                    <div class="icon"></div>#}
+            {#                </div>#}
+            {#                <div class="text-holder col-3-5">#}
+            {#                    <div class="feed-title">Other Item</div>#}
+            {#                    <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus#}
+            {#                        obcaecati#}
+            {#                        consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut#}
+            {#                        mollitia unde#}
+            {#                        sunt nobis quia, nam quasi!#}
+            {#                    </div>#}
+            {#                </div><!--end of text-holder-->#}
+            {#            </div><!--end of feed item-->#}
+
+        </div><!--end of Feed-->
         <div id="bottom">
             <p>已经到底了~</p>
         </div>
-        {#暂未用到的img和icon样式#}
-        {#            <div class="feed-item portfolio">#}
-        {#                <div class="img-holder col-1-5">#}
-        {#                    <div class="image"></div>#}
-        {#                </div>#}
-        {#                <div class="text-holder col-3-5">#}
-        {#                    <div class="feed-title">xxx教务通知</div>#}
-        {#                    <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus#}
-        {#                        obcaecati#}
-        {#                        consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut#}
-        {#                        mollitia unde#}
-        {#                        sunt nobis quia, nam quasi!#}
-        {#                    </div>#}
-        {#                </div><!--end of text-holder-->#}
-        {#            </div><!--end of feed item-->#}
-        {##}
-        {##}
-        {#            #}
-        {#            <div class="feed-item">#}
-        {#                <div class="img-holder">#}
-        {#                    <div class="icon"></div>#}
-        {#                </div>#}
-        {#                <div class="text-holder col-3-5">#}
-        {#                    <div class="feed-title">Other Item</div>#}
-        {#                    <div class="feed-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia natus#}
-        {#                        obcaecati#}
-        {#                        consequuntur quis molestias! Minima impedit ad omnis. Libero quibusdam facere dignissimos ut#}
-        {#                        mollitia unde#}
-        {#                        sunt nobis quia, nam quasi!#}
-        {#                    </div>#}
-        {#                </div><!--end of text-holder-->#}
-        {#            </div><!--end of feed item-->#}
-
-    </div><!--end of Feed-->
-
-</div><!-- End of Content-->
+    </div><!-- End of Content-->
 </div><!--end of allholder-->
 
 
