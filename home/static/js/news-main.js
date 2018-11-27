@@ -51,34 +51,34 @@ $(function () {//Wait for page to be ready
     })
 });
 
-var competitionOpen = false;
-$('#competition-filter').click(function () {
-    if (!competitionOpen) {
-        $('.competition').css('height', '0');
-        $('.competition').css('margin-bottom', '0');
-        $('#competition-filter').css('color', '#DEDEDE');
-        competitionOpen = true;
+var newsOpen = false;
+$('#news-filter').click(function () {
+    if (!newsOpen) {
+        $('.news').css('height', '0');
+        $('.news').css('margin-bottom', '0');
+        $('#news-filter').css('color', '#DEDEDE');
+        newsOpen = true;
     } else {
-        $('.competition').css('height', '120px');
-        $('.competition').css('margin-bottom', '10px');
-        $('#competition-filter').css('color', '#222');
-        competitionOpen = false;
+        $('.news').css('height', '120px');
+        $('.news').css('margin-bottom', '10px');
+        $('#news-filter').css('color', '#222');
+        newsOpen = false;
     }
 });
 
 
-var portfolioOpen = false;
-$('#portfolio-filter').click(function () {
-    if (!portfolioOpen) {
-        $('.portfolio').css('height', '0');
-        $('.portfolio').css('margin-bottom', '0px');
-        $('#portfolio-filter').css('color', '#DEDEDE');
-        portfolioOpen = true;
+var noticesOpen = false;
+$('#notices-filter').click(function () {
+    if (!noticesOpen) {
+        $('.notices').css('height', '0');
+        $('.notices').css('margin-bottom', '0px');
+        $('#notices-filter').css('color', '#DEDEDE');
+        noticesOpen = true;
     } else {
-        $('.portfolio').css('height', '120px');
-        $('.portfolio').css('margin-bottom', '10px');
-        $('#portfolio-filter').css('color', '#222');
-        portfolioOpen = false;
+        $('.notices').css('height', '120px');
+        $('.notices').css('margin-bottom', '10px');
+        $('#notices-filter').css('color', '#222');
+        noticesOpen = false;
     }
 });
 
@@ -197,7 +197,7 @@ function feedJoin(a) {
 //                 // data = unicode2Chr(reponse);
 //                 for (var i = 0; i < reponse.length; i++) {
 //                     var obj = reponse[i];
-//                     var html = "<div class=\"feed-item portfolio\"><div class=\"text-holder-noimage col-3-5\"><div class=\"feed-title\">" +
+//                     var html = "<div class=\"feed-item notices\"><div class=\"text-holder-noimage col-3-5\"><div class=\"feed-title\">" +
 //                         obj.title +
 //                         "</div><div class=\"feed-description\">" +
 //                         obj.description +
