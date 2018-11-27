@@ -33,23 +33,6 @@ for li in all_li:
                       describe=describe, img_url=img_src)
             new.save()
             times += 1
-        # else:
-            # 临时更新数据表
-            # obj.describe = text.split('，', 1)[1][:40]
-            # obj.pub_data = pub_date
-            # obj.save()
-            # print(pub_date)
-
-        # new = New.objects.update_or_create(defaults={'title': title},
-        #                                    title=title,
-        #                                    public='jwc',
-        #                                    source=source,
-        #                                    text=text,
-        #                                    type='教务通知',
-        #                                    describe=text[len(title) + 9:len(title) + 9],
-        #                                    pub_date=pub_date)
-        # if not new:
-        #     times += 1
 
 print("已更新" + str(times) + "条教务通知。")
 

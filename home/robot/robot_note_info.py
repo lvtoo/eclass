@@ -40,5 +40,4 @@ for i in tr:
         new.save()
         times += 1
 print("已更新"+str(times)+"条讲座通知。")
-# table = cont("table").removeAttr("style").remove()
-#
+
