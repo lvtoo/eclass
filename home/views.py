@@ -43,7 +43,8 @@ class NewsDetailView(View):
             "title": news.title,
             "text": news.text,
             "type": news.type,
-            "pub_date": news.pub_date
+            "pub_date": news.pub_date,
+            "img_url": news.img_url
 
         }
         return render(request, 'home/detail.html', context=context)
