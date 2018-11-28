@@ -52,32 +52,32 @@ $(function () {//Wait for page to be ready
 });
 
 var newsOpen = false;
-$('#news-filter').click(function () {
+$('#competition-filter').click(function () {
     if (!newsOpen) {
         $('.news').css('height', '0');
         $('.news').css('margin-bottom', '0');
-        $('#news-filter').css('color', '#DEDEDE');
+        $('#competition-filter').css('color', '#DEDEDE');
         newsOpen = true;
     } else {
         $('.news').css('height', '120px');
         $('.news').css('margin-bottom', '10px');
-        $('#news-filter').css('color', '#222');
+        $('#competition-filter').css('color', '#222');
         newsOpen = false;
     }
 });
 
 
 var noticesOpen = false;
-$('#notices-filter').click(function () {
+$('#portfolio-filter').click(function () {
     if (!noticesOpen) {
         $('.notices').css('height', '0');
         $('.notices').css('margin-bottom', '0px');
-        $('#notices-filter').css('color', '#DEDEDE');
+        $('#portfolio-filter').css('color', '#DEDEDE');
         noticesOpen = true;
     } else {
         $('.notices').css('height', '120px');
         $('.notices').css('margin-bottom', '10px');
-        $('#notices-filter').css('color', '#222');
+        $('#portfolio-filter').css('color', '#222');
         noticesOpen = false;
     }
 });
