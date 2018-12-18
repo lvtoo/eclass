@@ -12,7 +12,7 @@ class New(models.Model):
     display = models.BooleanField(default=False)
     pub_date = models.DateTimeField('date published')
     source = models.CharField(max_length=200)
-    img_url = models.CharField(max_length=300, null=True, blank=True)
+    img_url = models.CharField(max_length=500, null=True, blank=True)
     view_page = models.IntegerField(default=0)
     # class Meta:
     #     ordering:['-pub_date']
