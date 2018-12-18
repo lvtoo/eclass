@@ -32,7 +32,7 @@ for a in all_a:
             img_src = ''
         pub_date = soup.find('span', id='lblCreateDate').string.split(' ', 2)[1]
         pub_date = datetime.strptime(pub_date, '%Y/%m/%d')
-        describe = text.split('：', 1)[1][:70]
+        describe = text.split('：', 1)[1][:50]
         obj = New.objects.filter(title=title)
         if not obj:
             new = New(title=title, public='教务处', source=source, text=text, type='notices', pub_date=pub_date,
