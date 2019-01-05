@@ -152,7 +152,7 @@ $(window).on('scroll', function () {
 function feedJoin(a) {
     $.ajax({
         type: 'get',
-        async:false,
+        async: false,
         url: "/api/news",
         dataType: 'html',
         data: {'p': a},
@@ -161,14 +161,63 @@ function feedJoin(a) {
         },
         error: function () {
             load = false;
-            $("#bottom").css("display","block");
+            $("#bottom").css("display", "block");
         }
     });
 }
 
+//////下拉框
+$("#sort").click(function () {
+    $("#dropdown-con").toggle();
+});
+//搜索
 
-//
-
+$(function () {
+    // $("#search").click(function () {
+    //     var key = $("#con").val();
+    //     if (key == "") {
+    //         alert("请输入关键字");
+    //         return false;
+    //     }
+    //     $.ajax({
+    //         type: "post",
+    //         url: "/search/",
+    //         data: {
+    //             'key_words': key,
+    //             csrfmiddlewaretoken: '{{ csrf_token }}'
+    //
+    //         },
+    //         success: function () {
+    //             window.location.href = "/search/"
+    //         },
+    //         error: function () {
+    //             alert("发生未知错误")
+    //         }
+    //     })
+    // });
+    $('input').keydown(function (event) {
+        if (event.keyCode == 13) {
+            var key = $("#con").val();
+            if (key == "") {
+                alert("请输入关键字");
+                return false;
+            }
+            $.ajax({
+                type: "get",
+                url: "/search/",
+                data: {
+                    'key_words': key,
+                },
+                success: function () {
+                    window.location.href = "/search/"
+                },
+                error: function () {
+                    alert("发生未知错误")
+                }
+            })
+        }
+    });
+});
 // $(function () {
 //     var start = 10;
 //     var offset = 15;
