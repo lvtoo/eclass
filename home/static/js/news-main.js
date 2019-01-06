@@ -201,20 +201,22 @@ $(function () {
             if (key == "") {
                 alert("请输入关键字");
                 return false;
+            }else{
+                window.location.href = "http://elcass.oouul.com/search/"+key;
             }
-            $.ajax({
-                type: "get",
-                url: "/search/",
-                data: {
-                    'key_words': key,
-                },
-                success: function () {
-                    window.location.href = "/search/"
-                },
-                error: function () {
-                    alert("发生未知错误")
-                }
-            })
+//            $.ajax({
+//                type: "get",
+//                url: "/search/",
+//                data: {
+//                    'key_words': key,
+//                },
+//                success: function () {
+//                    window.location.href = "/search/"
+//                },
+//                error: function () {
+//                    alert("发生未知错误")
+//                }
+//            })
         }
     });
 });
