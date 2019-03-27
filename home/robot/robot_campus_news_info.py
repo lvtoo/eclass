@@ -33,7 +33,7 @@ for li in all_li:
     pub_date = datetime.strptime(pub_date, '%Y-%m-%d')
     r = requests.get(source)
     soup = BeautifulSoup(r.content, 'lxml')
-    div_tag = soup.find_all('div', class_='content')[5]
+    div_tag = soup.find_all('div', class_='region region-content')
     text = div_tag.text
     text = del_start_blank(text)
     describe = text[:70]
