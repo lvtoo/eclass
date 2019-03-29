@@ -3,8 +3,6 @@ from home.models import New
 from django.views.generic import View
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.http import HttpResponse, JsonResponse
-from django.core import serializers
 
 
 class Index(ListView):
@@ -12,14 +10,12 @@ class Index(ListView):
     template_name = 'home/index.html'
     paginate_by = 10
     context_object_name = 'items'
-    ordering = ['-pub_date']
 
     def get_queryset(self):
         return New.objects.filter(display=True)
 
 
 class IndexApi(ListView):
-    ordering = ['-pub_date']
     model = New
     template_name = 'home/ajax.html'
     paginate_by = 5

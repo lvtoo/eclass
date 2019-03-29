@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class New(models.Model):
@@ -14,8 +13,9 @@ class New(models.Model):
     source = models.CharField(max_length=200)
     img_url = models.CharField(max_length=300, null=True, blank=True)
     view_page = models.IntegerField(default=0)
-    # class Meta:
-    #     ordering:['-pub_date']
+
+    class Meta:
+        ordering = ['-pub_date']
 
     def __str__(self):
         return self.title
