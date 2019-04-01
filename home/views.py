@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 
 
 class Index(ListView):
+    ordering = ['-pub_date']
     model = New
     template_name = 'home/index.html'
     paginate_by = 10
@@ -16,6 +17,7 @@ class Index(ListView):
 
 
 class IndexApi(ListView):
+    ordering = ['-pub_date']
     model = New
     template_name = 'home/ajax.html'
     paginate_by = 5
