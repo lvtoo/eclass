@@ -195,14 +195,14 @@ $(function () {
     //         }
     //     })
     // });
-    $('input').keydown(function (event) {
+    $('#search').keydown(function (event) {
         if (event.keyCode == 13) {
-            var key = $("#con").val();
+            var key = $("#search").val();
             if (key == "") {
                 alert("请输入关键字");
                 return false;
             }else{
-                window.location.href = "http://elcass.oouul.com/search/"+key;
+                window.location.href = "/search/"+key;
             }
 //            $.ajax({
 //                type: "get",
