@@ -26,7 +26,6 @@ for a in all_a:
         soup = BeautifulSoup(r.content, 'lxml')
         div = soup.find('div', id='content')
         text = div.text
-        img_src = ''
         pub_date = soup.find('span', id='lblCreateDate').string.split(' ', 2)[1]
         pub_date = datetime.strptime(pub_date, '%Y/%m/%d')
         try:
