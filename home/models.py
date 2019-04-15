@@ -8,7 +8,7 @@ class New(models.Model):
     text = models.TextField()
     type = models.CharField(max_length=20)
     public = models.CharField(max_length=20, null=True, blank=True)
-    display = models.BooleanField(default=False)
+    display = models.BooleanField(default=True)
     pub_date = models.DateTimeField('date published')
     source = models.CharField(max_length=200)
     img_url = models.CharField(max_length=300, null=True, blank=True)
