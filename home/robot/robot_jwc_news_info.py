@@ -42,7 +42,7 @@ for new in all_news:
             describe = title
         obj = New.objects.filter(title=title)
         if not obj:
-            new = New(title=title, public='教务处', source=source, text=text, type='news', pub_date=pub_date,
+            new = New(title=title, public='教务处', source="", text=text, type='news', pub_date=pub_date,
                       describe=describe, img_url=img_src)
             new.save()
             times += 1
