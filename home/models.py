@@ -10,7 +10,7 @@ class New(models.Model):
     public = models.CharField(max_length=20, null=True, blank=True)
     display = models.BooleanField(default=True)
     pub_date = models.DateTimeField('date published')
-    source = models.CharField(max_length=200)
+    source = models.CharField(max_length=2000)
     img_url = models.CharField(max_length=300, null=True, blank=True)
     view_page = models.IntegerField(default=0)
 
