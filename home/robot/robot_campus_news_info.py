@@ -24,7 +24,7 @@ for li in all_li:  # 逐一分析
     try:  # 尝试寻找动态来源，没有的话保存空字符
         img_src = div_tag.find('img')['src']
     except TypeError:
-        img_src = ' '
+        img_src = ''
     obj = New.objects.filter(title=title)  # 过滤标题
     if not obj:  # 如果数据库中没有则保存
         new = New(title=title, describe=describe, text=text, type='new', public='SMU', pub_date=pub_date, source=source,
