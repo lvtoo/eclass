@@ -14,25 +14,27 @@ from datetime import datetime
 times = 0
 # 给jwc一个request
 url = "http://jwc.shmtu.edu.cn/"
-r = requests.get(url)
+r = requests.get(url+"/jiaowugonggao")
 soup = BeautifulSoup(r.content, 'lxml')
-div_tag = soup.find('div', class_='top_center_list_2')
+div_tag = soup.find('div', class_='table-responsive')
 all_a = div_tag.find_all('a')
-for a in all_a:
-    if a is not None:
-        title = a['title']
-        source = url + a['href']
+for k in all_a:
+    if k.get('href') is not None:
+        title = k.string
+        source = url + str(k.get('href'))
         r = requests.get(source)
         soup = BeautifulSoup(r.content, 'lxml')
-        div = soup.find('div', id='content')
+        div = soup.find('div', class_='region region-content')
         text = div.text
         img_src = ''
-        pub_date = soup.find('span', id='lblCreateDate').string.split(' ', 2)[1]
+        pub_date = soup.find('div', class_="view-content").text.split('：', 2)[2][:10]
+        pub_date = pub_date.rstrip()#去除时间右边的空格
         pub_date = datetime.strptime(pub_date, '%Y/%m/%d')
         try:
-            describe = text.split('：', 1)[1][:50]
+            describe = text.split('：', 1)[1][:40]
         except IndexError:
             describe = text[:50]
+        describe = describe.rstrip()
         obj = New.objects.filter(title=title)
         if not obj:
             new = New(title=title, public='教务处', source=source, text=text, type='notices', pub_date=pub_date,
